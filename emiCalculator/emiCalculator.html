@@ -1,0 +1,56 @@
+<template>
+    <lightning-card
+        variant="Narrow"
+        title="EMI Calculator"
+        icon-name="standard:bot"
+    >
+        <div class="slds-var-p-horizontal_small">
+            <lightning-input
+                type="number"
+                variant="standard"
+                name="principal"
+                label="Principal"
+                placeholder="Enter Principal"
+                value={principal}
+                onchange={handleChange}
+            ></lightning-input>
+
+            <lightning-input
+                type="number"
+                variant="standard"
+                name="interest"
+                label="Interest"
+                placeholder="Enter Interest"
+                value={interest}
+                onchange={handleChange}
+            ></lightning-input>
+
+            <lightning-input
+                type="toggle"
+                variant="standard"
+                name="tenureInMonths"
+                label="Tenure In Months"
+                checked={tenureInMonths}
+                onchange={handleMonthToggle}
+            ></lightning-input>
+
+            <lightning-input
+                type="number"
+                variant="standard"
+                name="tenure"
+                label="Tenure"
+                placeholder="Enter Tenure"
+                value={tenure}
+                onchange={handleChange}
+            >
+            </lightning-input>
+
+            <div>
+                Your EMI is <lightning-formatted-number
+                    value={emi}
+                    type="currency"
+                > </lightning-formatted-number>
+            </div>
+        </div>
+    </lightning-card>
+</template>
